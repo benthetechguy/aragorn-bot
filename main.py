@@ -203,7 +203,7 @@ def run_bot(r, comment_replied_to):
                             'You have some skill with a blade.',
                             'You are a daughter of kings a shieldmaiden of Rohan. I do not think that will be your fate!',
                             'They do not come to destroy Rohan\'s crops or villages. They come to destroy its people. Down to the last child.',
-                            'Its the beards.',
+                            'It\'s the beards.',
                             'Open war is upon you whether you would risk it or not.',
                             'Farmers, ferriers, stable boys. These are no soldiers.',
                             ' It is an army bred for a single purpose, to destroy the world of men. They will be here by nightfall.',
