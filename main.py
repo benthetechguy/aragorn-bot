@@ -13,6 +13,7 @@ reddit = praw.Reddit(username=config['username'], password=config['password'], c
 
 while True:
     for comment in reddit.subreddit('lotrmemes').comments(limit=25):
+        reply = ""
         if "to mind the children, to find food and bedding when the men return. what renown is there in that?" in comment.body.lower():
             reply = "My lady, a time may come for valor without renown. Who then will your people look to in the last defense?"
         elif "forged from the shards of narsil" in comment.body.lower():
@@ -159,7 +160,7 @@ while True:
                            'I do not believe it. I will not.']
                 reply = random.choice(choices)
 
-        if reply and comment.author != reddit.user.me and comment.id not in replied_to:
+        if reply != "" and comment.author != reddit.user.me and comment.id not in replied_to:
             print("Got one!")
 
             try:
