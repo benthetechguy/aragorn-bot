@@ -164,7 +164,7 @@ while True:
             print("Got one!")
 
             try:
-                comment.reply(reply)
+                comment.reply(body=reply)
             except:
                 print("The show must go on…")
 
