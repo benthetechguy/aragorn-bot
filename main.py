@@ -10,6 +10,7 @@ with open("replied_to.txt", "r") as replied_to_file:
     replied_to = replied_to.split("\n")
 
 reddit = praw.Reddit(username=config['username'], password=config['password'], client_id=config['client_id'], client_secret=config['client_secret'], user_agent=config['user_agent'])
+names = ["aragorn", "strider", "son of arathorn", "elessar", "estel", "talion", "thorongil", "telcontar", "envinyatar", "wingfoot", "dúnadan", "dunadan"]
 
 while True:
     for comment in reddit.subreddit('lotrmemes').comments(limit=25):
@@ -27,7 +28,7 @@ while True:
         elif "second" in comment.body.lower() and "breakfast" in comment.body.lower():
             reply = comment.author.name + ", you've already had it."
 
-        elif "aragorn" in comment.body.lower() or "strider" in comment.body.lower() or "son of arathorn" in comment.body.lower():
+        elif any(name in comment.body.lower() for name in names):
             if "gondor" in comment.body.lower() or "realm" in comment.body.lower() or "white" in comment.body.lower():
                 choices = ['Stand your ground, sons of Gondor, of Rohan, my brothers. I see in your eyes the same fear that would take the heart of me! A day may come when the courage of men fails, when we forsake our friends and break all bonds of fellowship; but it is not this day! An hour of wolves and shattered shields when the age of men comes crashing down, but it is not this day; this day we fight!!! And for all that is dear to you in this world, I bid you stand, men of the west, and fight!',
                            'Be at peace, son of Gondor.',
